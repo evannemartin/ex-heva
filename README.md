@@ -9,7 +9,8 @@ Pour ces exercices, nous proposons de travailler sur les données fournies par n
 Nous utiliserons Python dans sa version [3.10](https://www.python.org/downloads/).
 Il est attendu du ou de la candidat·e le projet structuré final permettant de répondre aux problématiques décrites ci-après.
 
-La base de données est fournie par le fichier SQLite `data/penguins.sqlite`.
+La base de données est fournie dans le fichier SQLite `data/penguins.sqlite`.
+Il s'agit du jeu de données [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/).
 
 L'exploitation de cette base de données peut-être réalisée en utilisant le module `sqlite3` de la bibliothèque standard de Python :
 
@@ -24,11 +25,14 @@ with sqlite3.connect("data/penguins.sqlite") as co:
 
 Nous encourageons le ou la candidat·e à utiliser les outils de son choix, tant que l'approche est documentée et reproductible (par exemple, fournir un fichier `requirements.txt`).
 
+L'objectif de ces exercices est de concevoir un module d'analyse de données, prévu pour être utilisé par d'autres collaborateurs sur d'autres données.
+
 ## Évaluation
 
 L'enjeu de ces exercices est de mettre en valeur votre capacité à fournir un travail réutilisable par d'autres collaborateurs.
 Nous serons particulièrement intéressés par les structures de programmation que vous mettrez en place.
 Nous accordons au sein de nos équipes une grande importance au fait de pouvoir reprendre le travail d'une autre personne.
+
 Par conséquent, le travail restitué sera évalué selon les modalités suivantes (par ordre décroissant d'importance) :
 - **Organisation** : le travail est-il correctement structuré ? Est-ce aisé de naviguer dans le projet et de réutiliser les briques développées ? L'historique de développement est-il correctement versionné ?
 - **Documentation** : les fonctionnalités sont-elles suffisamment documentées pour être facilement réutilisables par d'autres personnes ? 
@@ -51,14 +55,8 @@ Par conséquent, le travail restitué sera évalué selon les modalités suivant
 
 ### Création des fonctions d'analyse
 
-- 2.2 Dans le module `description`, ajouter une fonction permettant d'obtenir une table des fréquences à partir d'une série de données. Utiliser cette fonction dans le fichier racine `main.py`
-- 2.3 Dans le module `description`, ajouter une fonction de création d'un histogramme pour décrire visuellement une série de données numériques. Utiliser cette fonction dans le fichier racine `main.py`
-- 2.4 TODO : utilisation d'un modèle ?
-
-### Conversion d'un code existant
-
-- 3.1 TODO : conversion d'une macro SAS ?
-
-
-
-
+- 2.1 Dans le module `description`, ajouter une fonction permettant d'obtenir une table des fréquences des modalités à partir d'une série de données.
+Utiliser cette fonction dans le fichier racine `main.py`.
+- 2.2 Dans le module `description`, ajouter une fonction de création d'un histogramme pour décrire visuellement une série de données numériques.
+Utiliser cette fonction dans le fichier racine `main.py`
+- 2.3 Question ouverte : que proposeriez-vous pour améliorer le projet (tant du point de vue des fonctionnalités que pour la maintenance du code / sa qualité) ?
