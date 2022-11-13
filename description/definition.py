@@ -48,7 +48,7 @@ def freq_mod(array1mod) :
     return freq_tab
 
 
-    
+
 
 if __name__=="__main__":
 
