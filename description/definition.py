@@ -1,4 +1,6 @@
 import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib import colors
 
 def freq_mod(array1mod) :
 
@@ -47,6 +49,47 @@ def freq_mod(array1mod) :
 
     return freq_tab
 
+def create_hist(array1mod) :
+
+    """ This function allows to create a colored histogram from an array of values.
+
+        Args :
+            array1mod : the numpy array containing one specific modality to study
+
+        Returns :
+            None
+    """
+
+    # Save the array without 'None' values
+    array1mod = array1mod[array1mod != np.array(None)]
+
+    # Count appearance for each unique value
+    unique, counts = np.unique(array1mod, return_counts=True)
+    nb_unique = len(unique)
+
+    # To set a right number of bins
+    if nb_unique > 20 :
+        nb_unique = 20
+
+    # Create histogram
+    fig, axs = plt.subplots(1, 1, figsize =(10, 7), tight_layout = True)
+    N, bins, patches = axs.hist(array1mod, bins=nb_unique)
+
+    # Set color
+    fracs = ((N**(1 / 5)) / N.max())
+    norm = colors.Normalize(fracs.min(), fracs.max())
+
+    for thisfrac, thispatch in zip(fracs, patches):
+        color = plt.cm.viridis(norm(thisfrac))
+        thispatch.set_facecolor(color)
+
+    # Add labels
+    plt.xlabel("Values of the modality")
+    plt.ylabel("Appearance")
+    plt.title('Distribution of the modality')
+
+    # Show plot
+    plt.show()
 
 
 
