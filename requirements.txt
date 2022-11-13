@@ -1,0 +1,11 @@
+I hope this project is clear enough, don't hesitate to contact me if you have any question !
+
+Python version : 3.10
+
+Packages to install :
+- numpy
+- matplotlib
+- matplotlib.pyplot
+- doctest
+
+The data used here is the palmerpenguins data (https://allisonhorst.github.io/palmerpenguins/) extracted using sqlite3
